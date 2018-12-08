@@ -59,7 +59,7 @@ const sounds = [
   }
 ];
 
-const Pads = () => {
+const Pads = props => {
   return (
     <Wrapper>
       <table className="centered">
@@ -68,21 +68,21 @@ const Pads = () => {
             <td
               className="drum-pad"
               id={sounds[0].id}
-              onClick={() => console.log('Q')}
+              onClick={() => props.clicked(sounds[0].id)}
             >
               Q
             </td>
             <td
               className="drum-pad "
               id={sounds[1].id}
-              onClick={e => console.log('W')}
+              onClick={() => props.clicked(sounds[1].id)}
             >
               W
             </td>
             <td
               className="drum-pad"
               id={sounds[2].id}
-              onClick={e => console.log('E')}
+              onClick={() => props.clicked(sounds[2].id)}
             >
               E
             </td>
@@ -91,21 +91,21 @@ const Pads = () => {
             <td
               className="drum-pad"
               id={sounds[3].id}
-              onClick={e => console.log('A')}
+              onClick={() => props.clicked(sounds[3].id)}
             >
               A
             </td>
             <td
               className="drum-pad"
               id={sounds[4].id}
-              onClick={e => console.log('S')}
+              onClick={() => props.clicked(sounds[4].id)}
             >
               S
             </td>
             <td
               className="drum-pad"
               id={sounds[5].id}
-              onClick={e => console.log('D')}
+              onClick={() => props.clicked(sounds[5].id)}
             >
               D
             </td>
@@ -114,21 +114,21 @@ const Pads = () => {
             <td
               className="drum-pad"
               id={sounds[6].id}
-              onClick={e => console.log('Z')}
+              onClick={() => props.clicked(sounds[6].id)}
             >
               Z
             </td>
             <td
               className="drum-pad"
               id={sounds[7].id}
-              onClick={e => console.log('X')}
+              onClick={() => props.clicked(sounds[7].id)}
             >
               X
             </td>
             <td
               className="drum-pad"
               id={sounds[8].id}
-              onClick={e => console.log('C')}
+              onClick={() => props.clicked(sounds[8].id)}
             >
               C
             </td>

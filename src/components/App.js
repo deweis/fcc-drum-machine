@@ -4,6 +4,17 @@ import Pads from './Pads';
 import './App.css';
 
 class App extends Component {
+  state = {
+    currentPad: 'Play me..'
+  };
+
+  onPadClick = padId => {
+    console.log(padId);
+    this.setState({
+      currentPad: padId
+    });
+  };
+
   render() {
     return (
       <div id="drum-machine" className="App">
@@ -11,10 +22,10 @@ class App extends Component {
         <div className="section">
           <div className="container">
             <div className="row">
-              <Display id="display" />
+              <Display id="display" pad={this.state.currentPad} />
             </div>
             <div className="row">
-              <Pads />
+              <Pads clicked={this.onPadClick} />
             </div>
           </div>
         </div>
