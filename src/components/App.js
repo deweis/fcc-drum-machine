@@ -11,7 +11,7 @@ class App extends Component {
         <div className="section">
           <div className="container">
             <div className="row">
-              <Display />
+              <Display id="display" />
             </div>
             <div className="row">
               <Pads />
