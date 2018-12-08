@@ -6,7 +6,7 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div id="drum-machine" className="App">
         <h1>fCC Drum</h1>
         <div className="section">
           <div className="container">
