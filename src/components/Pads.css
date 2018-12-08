@@ -1,0 +1,17 @@
+table {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+tr {
+  border-bottom: none;
+}
+
+td {
+  background: #ffe0b2; /* orange lighten-4 */
+  border: 15px solid #fff;
+  border-radius: 3em;
+  height: 125px;
+  width: 33%;
+  cursor: pointer;
+}
