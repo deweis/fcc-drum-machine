@@ -58,85 +58,100 @@ const sounds = [
     url: 'https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3'
   }
 ];
+class Pads extends React.Component {
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  }
 
-const Pads = props => {
-  return (
-    <Wrapper>
-      <table className="centered">
-        <tbody>
-          <tr>
-            <td
-              className="drum-pad"
-              id={sounds[0].id}
-              onClick={() => props.clicked(sounds[0].id)}
-            >
-              Q
-            </td>
-            <td
-              className="drum-pad "
-              id={sounds[1].id}
-              onClick={() => props.clicked(sounds[1].id)}
-            >
-              W
-            </td>
-            <td
-              className="drum-pad"
-              id={sounds[2].id}
-              onClick={() => props.clicked(sounds[2].id)}
-            >
-              E
-            </td>
-          </tr>
-          <tr>
-            <td
-              className="drum-pad"
-              id={sounds[3].id}
-              onClick={() => props.clicked(sounds[3].id)}
-            >
-              A
-            </td>
-            <td
-              className="drum-pad"
-              id={sounds[4].id}
-              onClick={() => props.clicked(sounds[4].id)}
-            >
-              S
-            </td>
-            <td
-              className="drum-pad"
-              id={sounds[5].id}
-              onClick={() => props.clicked(sounds[5].id)}
-            >
-              D
-            </td>
-          </tr>
-          <tr>
-            <td
-              className="drum-pad"
-              id={sounds[6].id}
-              onClick={() => props.clicked(sounds[6].id)}
-            >
-              Z
-            </td>
-            <td
-              className="drum-pad"
-              id={sounds[7].id}
-              onClick={() => props.clicked(sounds[7].id)}
-            >
-              X
-            </td>
-            <td
-              className="drum-pad"
-              id={sounds[8].id}
-              onClick={() => props.clicked(sounds[8].id)}
-            >
-              C
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </Wrapper>
-  );
-};
+  handleKeyPress = event => {
+    const pressedKey = sounds.find(x => x.keyCode === event.keyCode);
+    if (pressedKey) {
+      this.props.clicked(pressedKey.id);
+    }
+  };
+
+  render() {
+    return (
+      <Wrapper>
+        <table className="centered">
+          <tbody>
+            <tr>
+              <td
+                className="drum-pad"
+                id={sounds[0].id}
+                onClick={() => this.props.clicked(sounds[0].id)}
+              >
+                Q
+              </td>
+              <td
+                className="drum-pad "
+                id={sounds[1].id}
+                onClick={() => this.props.clicked(sounds[1].id)}
+              >
+                W
+              </td>
+              <td
+                className="drum-pad"
+                id={sounds[2].id}
+                onClick={() => this.props.clicked(sounds[2].id)}
+              >
+                E
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="drum-pad"
+                id={sounds[3].id}
+                onClick={() => this.props.clicked(sounds[3].id)}
+              >
+                A
+              </td>
+              <td
+                className="drum-pad"
+                id={sounds[4].id}
+                onClick={() => this.props.clicked(sounds[4].id)}
+              >
+                S
+              </td>
+              <td
+                className="drum-pad"
+                id={sounds[5].id}
+                onClick={() => this.props.clicked(sounds[5].id)}
+              >
+                D
+              </td>
+            </tr>
+            <tr>
+              <td
+                className="drum-pad"
+                id={sounds[6].id}
+                onClick={() => this.props.clicked(sounds[6].id)}
+              >
+                Z
+              </td>
+              <td
+                className="drum-pad"
+                id={sounds[7].id}
+                onClick={() => this.props.clicked(sounds[7].id)}
+              >
+                X
+              </td>
+              <td
+                className="drum-pad"
+                id={sounds[8].id}
+                onClick={() => this.props.clicked(sounds[8].id)}
+              >
+                C
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </Wrapper>
+    );
+  }
+}
 
 export default Pads;
