@@ -3,9 +3,14 @@ import Display from './Display';
 import Pads from './Pads';
 import './App.css';
 
+/*
+- Manage Pad backgrounds in the Pads component
+- Create Td's by a loop and put in pad component
+*/
+
 class App extends Component {
   state = {
-    currentPad: 'Play me..'
+    currentPad: "I'm a Drum, play me.."
   };
 
   onPadClick = padId => {
@@ -17,7 +22,6 @@ class App extends Component {
   render() {
     return (
       <div id="drum-machine" className="App">
-        <h1>fCC Drum</h1>
         <div className="section">
           <div className="container">
             <div className="row">

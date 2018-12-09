@@ -1,7 +1,12 @@
 import React from 'react';
+import Wrapper from './Wrapper';
 
 const Display = props => {
-  return <div id={props.id}>{props.pad}</div>;
+  return (
+    <Wrapper>
+      <h3 id={props.id}>{props.pad}</h3>
+    </Wrapper>
+  );
 };
 
 export default Display;
