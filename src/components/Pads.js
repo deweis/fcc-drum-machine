@@ -85,6 +85,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[0].id)}
               >
                 Q
+                <audio id="Q" className="clip">
+                  <source src={sounds[0].url} preload="auto" />
+                </audio>
               </td>
               <td
                 className="drum-pad "
@@ -92,6 +95,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[1].id)}
               >
                 W
+                <audio id="W" className="clip">
+                  <source src={sounds[1].url} preload="auto" />
+                </audio>
               </td>
               <td
                 className="drum-pad"
@@ -99,6 +105,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[2].id)}
               >
                 E
+                <audio id="E" className="clip">
+                  <source src={sounds[2].url} preload="auto" />
+                </audio>
               </td>
             </tr>
             <tr>
@@ -108,6 +117,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[3].id)}
               >
                 A
+                <audio id="A" className="clip">
+                  <source src={sounds[3].url} preload="auto" />
+                </audio>
               </td>
               <td
                 className="drum-pad"
@@ -115,6 +127,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[4].id)}
               >
                 S
+                <audio id="S" className="clip">
+                  <source src={sounds[4].url} preload="auto" />
+                </audio>
               </td>
               <td
                 className="drum-pad"
@@ -122,6 +137,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[5].id)}
               >
                 D
+                <audio id="D" className="clip">
+                  <source src={sounds[5].url} preload="auto" />
+                </audio>
               </td>
             </tr>
             <tr>
@@ -131,6 +149,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[6].id)}
               >
                 Z
+                <audio id="Z" className="clip">
+                  <source src={sounds[6].url} preload="auto" />
+                </audio>
               </td>
               <td
                 className="drum-pad"
@@ -138,6 +159,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[7].id)}
               >
                 X
+                <audio id="X" className="clip">
+                  <source src={sounds[7].url} preload="auto" />
+                </audio>
               </td>
               <td
                 className="drum-pad"
@@ -145,6 +169,9 @@ class Pads extends React.Component {
                 onClick={() => this.props.clicked(sounds[8].id)}
               >
                 C
+                <audio id="C" className="clip">
+                  <source src={sounds[8].url} preload="auto" />
+                </audio>
               </td>
             </tr>
           </tbody>
