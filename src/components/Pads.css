@@ -15,3 +15,8 @@ td {
   width: 33%;
   cursor: pointer;
 }
+
+td:hover {
+  background-color: #ffb74d; /* orange lighten-2 */
+  font-weight: bold;
+}

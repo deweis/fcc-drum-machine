@@ -66,11 +66,28 @@ class Pads extends React.Component {
     document.removeEventListener('keydown', this.handleKeyPress);
   }
 
+  /* If played by keypad */
   handleKeyPress = event => {
     const pressedKey = sounds.find(x => x.keyCode === event.keyCode);
     if (pressedKey) {
-      this.props.clicked(pressedKey.id);
+      this.padTriggered(pressedKey);
     }
+  };
+
+  /* Helper funciton to play the respective pad sounds */
+  padTriggered = pad => {
+    /* update parent state to display the pad clicked */
+    this.props.clicked(pad.id);
+
+    /* play the audio */
+    document.getElementById(pad.keyTrigger).currentTime = 0;
+    document.getElementById(pad.keyTrigger).play();
+
+    /* background change to show the pad clicked */
+    document.getElementById(pad.id).style.background = '#ff9800';
+    setTimeout(function() {
+      document.getElementById(pad.id).style.background = '#ffe0b2';
+    }, 100);
   };
 
   render() {
@@ -82,96 +99,123 @@ class Pads extends React.Component {
               <td
                 className="drum-pad"
                 id={sounds[0].id}
-                onClick={() => this.props.clicked(sounds[0].id)}
+                onClick={() => this.padTriggered(sounds[0])}
               >
                 Q
-                <audio id="Q" className="clip">
-                  <source src={sounds[0].url} preload="auto" />
-                </audio>
+                <audio
+                  id="Q"
+                  className="clip"
+                  src={sounds[0].url}
+                  preload="auto"
+                />
               </td>
               <td
                 className="drum-pad "
                 id={sounds[1].id}
-                onClick={() => this.props.clicked(sounds[1].id)}
+                onClick={() => this.padTriggered(sounds[1])}
               >
                 W
-                <audio id="W" className="clip">
-                  <source src={sounds[1].url} preload="auto" />
-                </audio>
+                <audio
+                  id="W"
+                  className="clip"
+                  src={sounds[1].url}
+                  preload="auto"
+                />
               </td>
               <td
                 className="drum-pad"
                 id={sounds[2].id}
-                onClick={() => this.props.clicked(sounds[2].id)}
+                onClick={() => this.padTriggered(sounds[2])}
               >
                 E
-                <audio id="E" className="clip">
-                  <source src={sounds[2].url} preload="auto" />
-                </audio>
+                <audio
+                  id="E"
+                  className="clip"
+                  src={sounds[2].url}
+                  preload="auto"
+                />
               </td>
             </tr>
             <tr>
               <td
                 className="drum-pad"
                 id={sounds[3].id}
-                onClick={() => this.props.clicked(sounds[3].id)}
+                onClick={() => this.padTriggered(sounds[3])}
               >
                 A
-                <audio id="A" className="clip">
-                  <source src={sounds[3].url} preload="auto" />
-                </audio>
+                <audio
+                  id="A"
+                  className="clip"
+                  src={sounds[3].url}
+                  preload="auto"
+                />
               </td>
               <td
                 className="drum-pad"
                 id={sounds[4].id}
-                onClick={() => this.props.clicked(sounds[4].id)}
+                onClick={() => this.padTriggered(sounds[4])}
               >
                 S
-                <audio id="S" className="clip">
-                  <source src={sounds[4].url} preload="auto" />
-                </audio>
+                <audio
+                  id="S"
+                  className="clip"
+                  src={sounds[4].url}
+                  preload="auto"
+                />
               </td>
               <td
                 className="drum-pad"
                 id={sounds[5].id}
-                onClick={() => this.props.clicked(sounds[5].id)}
+                onClick={() => this.padTriggered(sounds[5])}
               >
                 D
-                <audio id="D" className="clip">
-                  <source src={sounds[5].url} preload="auto" />
-                </audio>
+                <audio
+                  id="D"
+                  className="clip"
+                  src={sounds[5].url}
+                  preload="auto"
+                />
               </td>
             </tr>
             <tr>
               <td
                 className="drum-pad"
                 id={sounds[6].id}
-                onClick={() => this.props.clicked(sounds[6].id)}
+                onClick={() => this.padTriggered(sounds[6])}
               >
                 Z
-                <audio id="Z" className="clip">
-                  <source src={sounds[6].url} preload="auto" />
-                </audio>
+                <audio
+                  id="Z"
+                  className="clip"
+                  src={sounds[6].url}
+                  preload="auto"
+                />
               </td>
               <td
                 className="drum-pad"
                 id={sounds[7].id}
-                onClick={() => this.props.clicked(sounds[7].id)}
+                onClick={() => this.padTriggered(sounds[7])}
               >
                 X
-                <audio id="X" className="clip">
-                  <source src={sounds[7].url} preload="auto" />
-                </audio>
+                <audio
+                  id="X"
+                  className="clip"
+                  src={sounds[7].url}
+                  preload="auto"
+                />
               </td>
               <td
                 className="drum-pad"
                 id={sounds[8].id}
-                onClick={() => this.props.clicked(sounds[8].id)}
+                onClick={() => this.padTriggered(sounds[8])}
               >
                 C
-                <audio id="C" className="clip">
-                  <source src={sounds[8].url} preload="auto" />
-                </audio>
+                <audio
+                  id="C"
+                  className="clip"
+                  src={sounds[8].url}
+                  preload="auto"
+                />
               </td>
             </tr>
           </tbody>

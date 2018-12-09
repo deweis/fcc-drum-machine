@@ -9,7 +9,6 @@ class App extends Component {
   };
 
   onPadClick = padId => {
-    //console.log(padId);
     this.setState({
       currentPad: padId
     });
