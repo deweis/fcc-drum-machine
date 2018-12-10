@@ -3,12 +3,7 @@ import Display from './Display';
 import Pads from './Pads';
 import './App.css';
 
-/*
-- Manage Pad backgrounds in the Pads component
-- Create Td's by a loop and put in pad component
-*/
-
-class App extends Component {
+class App extends React.Component {
   state = {
     currentPad: "I'm a Drum, play me.."
   };
